@@ -68,7 +68,7 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
-
+        "foundation-sites": "^6.6.1"
     },
     "husky": {
         "hooks": {

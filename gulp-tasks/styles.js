@@ -21,7 +21,12 @@ gulp.task("styles", () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(plumber())
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: sassPaths,
+            outputStyle: 'compressed' // if css compressed **file size**
+            }
+
+        ))
         .pipe(groupmedia())
         .pipe(gulpif(production, autoprefixer({
             cascade: false,
