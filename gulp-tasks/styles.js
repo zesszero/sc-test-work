@@ -14,6 +14,11 @@ import browsersync from "browser-sync";
 import debug from "gulp-debug";
 import yargs from "yargs";
 
+var sassPaths = [
+    'node_modules/foundation-sites/scss',
+    'node_modules/motion-ui/src'
+];
+
 const argv = yargs.argv,
     production = !!argv.production;
 
@@ -25,7 +30,6 @@ gulp.task("styles", () => {
             includePaths: sassPaths,
             outputStyle: 'compressed' // if css compressed **file size**
             }
-
         ))
         .pipe(groupmedia())
         .pipe(gulpif(production, autoprefixer({

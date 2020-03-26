@@ -1,0 +1,28 @@
+.menu-multilevel {
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    font-family: "PT Sans", sans-serif;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-text;
+  }
+
+  &__item--level {
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 8px;
+      background: url(/img/after.svg) 0 0 no-repeat;
+      background-size: contain;
+      transform: rotate(90deg);
+      margin-left: 5px;
+    }
+  }
+}

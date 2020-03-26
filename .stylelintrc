@@ -5,7 +5,7 @@
         "stylelint-selector-bem-pattern"
     ],
     "rules": {
-        "indentation": 4,
+        "indentation": 2,
         "plugin/selector-bem-pattern": [
             {
                 "implicitComponents": true,
@@ -156,10 +156,6 @@
         "font-family-no-missing-generic-family-keyword": [true, {
             "message": "Необходимо указывать sans-serif или serif"
         }],
-        "font-weight-notation": ["numeric", {
-            "message": "Необходимо указывать плотность шрифта цифрой",
-            ignore: ["relative"]
-        }],
 
         "number-no-trailing-zeros": [true, {
             "message": "Лишний (необязательный) нуль в дроби"
@@ -200,15 +196,7 @@
         "block-closing-brace-empty-line-before": ["never", {
             "message": "Перед «}» не должно быть пустой строки"
         }],
-        "block-closing-brace-newline-after": ["always", {
-            "message": "После «}» не должно быть переноса"
-        }],
-        "block-closing-brace-newline-before": ["always", {
-            "message": "Перед «}» должен быть перенос"
-        }],
-        "block-opening-brace-newline-after": ["always", {
-            "message": "После «{» должен быть перенос"
-        }],
+
         "block-opening-brace-space-before": ["always", {
             "message": "Перед «{» должен быть один пробел"
         }],
