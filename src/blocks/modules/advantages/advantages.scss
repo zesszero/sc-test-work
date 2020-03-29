@@ -2,70 +2,109 @@
   @include xy-grid-container();
 
   &__row {
-    @include xy-grid();
-    @include xy-gutters();
+    @include breakpoint(large) {
+      @include xy-grid();
+      @include xy-gutters();
+    }
+
   }
 
   &__box {
-    @include xy-cell(6);
+    @include breakpoint(large) {
+      @include xy-cell(6);
+    }
+
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
+    @include breakpoint(large) {
+      font-size: 40px;
+      padding-bottom: 15px;
+    }
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
-    font-size: 40px;
-    padding-bottom: 15px;
+    font-size: 24px;
+    padding-bottom: 32px;
     color: $color-text;
+    order: 1;
   }
 
   &__description {
+    @include breakpoint(large) {
+      font-size: 16px;
+      padding-bottom: 47px;
+      order: 2;
+      padding-top: 0;
+    }
     font-family: "PT Sans", sans-serif;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
     color: $color-middle-gray;
-    padding-bottom: 47px;
+    padding-top: 27px;
+    order: 5;
   }
 
   &__list {
+    @include breakpoint(large) {
+      padding-bottom: 70px;
+      order: 3;
+    }
     list-style: none;
-    padding-bottom: 70px;
+    padding-bottom: 11px;
+    order: 2;
   }
 
   &__item {
+    @include breakpoint(large) {
+      font-size: 20px;
+      padding-bottom: 6px;
+    }
     font-family: "PT Sans", sans-serif;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 16px;
     color: $color-text;
-    padding-bottom: 10px;
+    padding-bottom: 14px;
     display: flex;
     align-items: center;
 
     &:before {
+      @include breakpoint(large) {
+        margin-right: 25px;
+      }
       content: "";
       display: inline-block;
       background-color: $color-text;
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      margin-right: 25px;
+      margin-right: 10px;
     }
   }
 
   &__links {
     display: flex;
+    order: 4;
   }
 
   &__btn {
+    @include breakpoint(large) {
+      margin-right: 45px;
+      margin-left: 0;
+    }
+
+    margin: 0 auto;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 14px;
     color: $color-white;
-    padding: 15px 45px;
+    padding: 15px 35px;
     background: $color-orange-gradient;
     border-radius: 45px;
     text-decoration: none;
     text-align: center;
-    margin-right: 45px;
+    order: 4;
 
     &:hover {
       box-shadow: 0 7px 15px $color-mainorange;
@@ -74,7 +113,12 @@
   }
 
   &__link {
-    display: flex;
+    @include breakpoint(large) {
+      display: flex;
+      order: 4;
+    }
+
+    display: none;
     align-items: center;
     font-family: "PT Sans", sans-serif;
     text-decoration: none;
@@ -87,7 +131,7 @@
       display: inline-block;
       width: 8px;
       height: 4px;
-      background: url(/img/rus-link.svg)0 0 no-repeat;
+      background: url(/img/rus-link.svg) 0 0 no-repeat;
       transform: rotate(-90deg);
       background-size: contain;
       margin-left: 5px;
@@ -95,6 +139,22 @@
   }
 
   &__right-box {
-    @include xy-cell(6);
+    @include breakpoint(large) {
+      @include xy-cell(6);
+
+      display: block;
+    }
+
+    display: none;
+  }
+
+  &__img {
+    @include breakpoint(large) {
+      display: none;
+    }
+    display: block;
+    order: 3;
+    max-width: 100%;
+    padding-bottom: 32px;
   }
 }
