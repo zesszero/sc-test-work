@@ -1,0 +1,100 @@
+.advantages {
+  @include xy-grid-container();
+
+  &__row {
+    @include xy-grid();
+    @include xy-gutters();
+  }
+
+  &__box {
+    @include xy-cell(6);
+  }
+
+  &__title {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 15px;
+    color: $color-text;
+  }
+
+  &__description {
+    font-family: "PT Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-middle-gray;
+    padding-bottom: 47px;
+  }
+
+  &__list {
+    list-style: none;
+    padding-bottom: 70px;
+  }
+
+  &__item {
+    font-family: "PT Sans", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: $color-text;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      background-color: $color-text;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 25px;
+    }
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__btn {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-white;
+    padding: 15px 45px;
+    background: $color-orange-gradient;
+    border-radius: 45px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 45px;
+
+    &:hover {
+      box-shadow: 0 7px 15px $color-mainorange;
+      transition: 0.2s;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-mainorange;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 4px;
+      background: url(/img/rus-link.svg)0 0 no-repeat;
+      transform: rotate(-90deg);
+      background-size: contain;
+      margin-left: 5px;
+    }
+  }
+
+  &__right-box {
+    @include xy-cell(6);
+  }
+}
