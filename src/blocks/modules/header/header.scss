@@ -1,8 +1,13 @@
 .header {
+  @include breakpoint(medium) {
+    padding-bottom: 25px;
+  }
+  position: relative;
   padding-bottom: 66px;
 
   &__panel {
     @include xy-grid-container();
+
     @include breakpoint(large) {
       display: block;
     }
@@ -45,11 +50,14 @@
 
   &__panel-close {
     @include xy-cell(1);
+
     display: flex;
     justify-content: flex-end;
   }
 
   &__panel-close-btn {
+    display: flex;
+    align-items: center;
     border: none;
     background-color: $color-white;
     font-family: "PT Sans", sans-serif;
@@ -74,13 +82,18 @@
     @include breakpoint(large) {
       padding: 19px;
     }
+
     background-color: $color-lightgray;
-    padding-top:20px;
+    padding-top: 20px;
     padding-bottom: 20px;
   }
 
   &__box {
     @include xy-grid-container();
+
+    @include breakpoint(medium only) {
+      @include xy-grid-container($width: 640px);
+    }
   }
 
   &__box-row {
@@ -134,6 +147,11 @@
     @include breakpoint(large) {
       @include xy-cell(7);
       @include xy-cell-offset(1);
+    }
+    @include breakpoint(medium) {
+      @include xy-cell(3 of 8);
+
+      justify-content: flex-start;
     }
 
     display: flex;
@@ -196,24 +214,65 @@
       margin-left: 35px;
     }
 
+    @include breakpoint(medium only) {
+      width: 100%;
+    }
+
     max-width: 100%;
+  }
+
+  &__info-box {
+    @include breakpoint(medium) {
+      @include xy-cell(3 of 8);
+      @include xy-cell-offset(2 of 8);
+    }
+
+    @include breakpoint(large) {
+      display: none;
+    }
+
+    @include xy-cell(2 of 6);
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__contact-tel {
+    @include breakpoint(medium) {
+      display: block;
+    }
+
+    @include breakpoint(large) {
+      display: none;
+    }
+
+    display: none;
+    font-family: "PT Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-darckgray;
+    text-decoration: none;
   }
 
   &__contact-phone {
     @include breakpoint(medium) {
       display: none;
     }
-    @include xy-cell(1 of 6);
   }
 
   &__btn {
-    @include xy-cell(1 of 6);
     @include breakpoint(large) {
       display: none;
     }
 
+    @include breakpoint(medium) {
+      //
+    }
+
     display: block;
     border: none;
+    margin-left: 20px;
+    padding: 0;
     background-color: transparent;
     outline: none;
   }
@@ -263,6 +322,7 @@
       height: 16px;
       background: url(/img/search.svg) 0 0 no-repeat;
       background-size: contain;
+      margin-left: auto;
       margin-right: 14px;
     }
   }
@@ -271,6 +331,11 @@
     @include breakpoint(large) {
       font-size: 14px;
     }
+
+    @include breakpoint(medium) {
+      font-size: 10px;
+    }
+
     max-width: 100%;
     border: none;
     padding: 7px 0 7px 17px;
@@ -281,14 +346,20 @@
 
   &__bottom-box {
     @include xy-grid-container();
+
+    @include breakpoint(medium only) {
+      @include xy-grid-container($width: 640px);
+    }
   }
 
   &__bottom-box-row {
     @include xy-grid();
     @include xy-gutters($negative: true);
+
     @include breakpoint(large) {
       align-items: baseline;
     }
+
     display: flex;
     align-items: center;
     margin-top: 18px;
@@ -296,25 +367,36 @@
 
   &__logo {
     @include xy-cell(2 of 6);
+
     @include breakpoint(large) {
       @include xy-cell(1);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(1 of 8);
     }
   }
 
   &__menu {
-    @include xy-cell(6);
     @include breakpoint(large) {
-      display: block;
+      @include xy-cell(6);
     }
 
-    display: none;
+    width: 0;
   }
 
   &__bottom-box-right {
+    @include xy-cell(4 of 6);
+
     @include breakpoint(large) {
       @include xy-cell(5);
     }
-    @include xy-cell(4 of 6);
+
+    @include breakpoint(medium) {
+      @include xy-cell(3 of 8);
+      @include xy-cell-offset(4 of 8);
+    }
+
 
     display: flex;
     align-items: center;
@@ -345,6 +427,19 @@
         margin-right: 10px;
       }
     }
+
+    @include breakpoint(medium) {
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background: url(/img/log-in.svg) 0 0 no-repeat;
+        background-size: contain;
+        margin-right: 10px;
+      }
+    }
+
     display: flex;
     align-items: center;
     font-family: "PT Sans", sans-serif;
@@ -362,6 +457,7 @@
       margin-left: 35px;
       padding: 15px 44px;
     }
+
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 14px;

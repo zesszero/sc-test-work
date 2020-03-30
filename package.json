@@ -68,11 +68,11 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
-        "foundation-sites": "^6.6.1"
+        "foundation-sites": "^6.6.1",
+        "jquery": "^3.4.1"
     },
     "husky": {
-        "hooks": {
-        }
+        "hooks": {}
     },
     "lint-staged": {
         "!(_*).scss": [

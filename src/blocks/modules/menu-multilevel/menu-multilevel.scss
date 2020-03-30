@@ -1,28 +1,70 @@
 .menu-multilevel {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  padding: 30px;
+
   &__list {
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    padding-top: 20px;
   }
 
   &__link {
+    @include breakpoint(large) {
+      font-size: 16px;
+    }
+
     font-family: "PT Sans", sans-serif;
     text-decoration: none;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
     color: $color-text;
+
+    &:hover {
+      color: $color-white;
+    }
   }
 
-  &__item--level {
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 8px;
-      background: url(/img/after.svg) 0 0 no-repeat;
-      background-size: contain;
-      transform: rotate(90deg);
-      margin-left: 5px;
+  &__item {
+    padding: 9px 5px;
+    border-radius: 3px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
+
+    &:hover {
+      background-color: $color-mainorange;
+      transition: 0.2s;
+    }
+
+    &--level {
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 8px;
+        background: url(/img/after.svg) 0 0 no-repeat;
+        background-size: contain;
+        transform: rotate(90deg);
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
   }
 }
