@@ -265,9 +265,6 @@
       display: none;
     }
 
-    @include breakpoint(medium) {
-      //
-    }
 
     display: block;
     border: none;
@@ -380,6 +377,8 @@
   &__menu {
     @include breakpoint(large) {
       @include xy-cell(6);
+
+      width: 540px;
     }
 
     width: 0;

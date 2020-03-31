@@ -1,12 +1,27 @@
-import $ from 'jquery';
+function MenuMultilevel() {
+    let menu = document.querySelector('.menu-multilevel');
+    let closeBtn = document.querySelector('.menu-multilevel__close-btn');
+    let burgerBtn = document.querySelector('.header__btn');
+
+    setEventListeners();
+
+    function showMenu() {
+        menu.classList.add('menu-multilevel--opened');
+    }
+
+    function hideMenu() {
+        menu.classList.remove('menu-multilevel--opened');
+    }
+
+    function setEventListeners() {
+        burgerBtn.addEventListener('click', () => showMenu());
+        closeBtn.addEventListener('click', () => hideMenu());
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.menu-multilevel__close-btn').addEventListener('click', () => {
-        $('.menu-multilevel').animate({ left: "-100%" }, 200);
-    });
-
-    document.querySelector('.header__btn').addEventListener('click', () => {
-        $('.menu-multilevel').animate({ left: "0" }, 200);
-    });
+    new MenuMultilevel();
 });
+
 
