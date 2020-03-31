@@ -36,6 +36,11 @@
     font-size: 14px;
     color: $color-darckgray;
     text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainorange;
+    }
 
     &:after {
       content: "";
@@ -65,7 +70,13 @@
     font-size: 14px;
     color: $color-darckgray;
     outline: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: 0.2s;
 
+    &:hover {
+      color: $color-mainorange;
+    }
 
     &:after {
       content: "";
@@ -122,6 +133,11 @@
     font-size: 14px;
     color: $color-darckgray;
     text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainorange;
+    }
   }
 
   &__left-box-link--about {
@@ -172,6 +188,11 @@
     text-decoration: none;
     align-items: center;
     margin-left: 35px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainorange;
+    }
 
     &:before {
       content: "";
@@ -197,6 +218,11 @@
     display: none;
     align-items: center;
     margin-left: 35px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainorange;
+    }
 
     &:before {
       content: "";
@@ -287,6 +313,11 @@
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainodarkrange;
+    }
 
     &:after {
       content: "";
@@ -406,12 +437,18 @@
     @include breakpoint(large) {
       display: block;
     }
+
     display: none;
     font-family: "PT Sans", sans-serif;
     font-weight: normal;
     font-size: 16px;
     color: $color-darckgray;
     text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainorange;
+    }
   }
 
   &__log-in-link {
@@ -447,8 +484,11 @@
     text-decoration: none;
     margin-left: 35px;
     color: $color-mainorange;
+    transition: 0.2s;
 
-
+    &:hover {
+      color: $color-mainodarkrange;
+    }
   }
 
   &__registration-btn {
@@ -467,10 +507,10 @@
     border-radius: 45px;
     text-decoration: none;
     margin-left: 15px;
+    transition: 0.2s;
 
     &:hover {
-      box-shadow: 0 7px 15px $color-mainorange;
-      transition: 0.2s;
+      box-shadow: 0 3px 7px $color-mainorange;
     }
   }
 }

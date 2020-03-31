@@ -136,10 +136,10 @@
     border-radius: 45px;
     text-decoration: none;
     text-align: center;
+    transition: 0.2s;
 
     &:hover {
-      box-shadow: 0 7px 15px $color-mainorange;
-      transition: 0.2s;
+      box-shadow: 0 3px 7px $color-mainorange;
     }
   }
 
@@ -156,6 +156,11 @@
     font-weight: bold;
     font-size: 14px;
     color: $color-mainorange;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-mainodarkrange;
+    }
 
     &:after {
       content: "";

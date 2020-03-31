@@ -8,8 +8,8 @@
     top: 0;
     left: -100%;
     width: 100%;
-    height: 100%;
     max-width: 320px;
+    height: 100%;
     background: #ffffff;
     padding: 30px;
     transition: 0.2s;
@@ -37,6 +37,11 @@
   &__link {
     @include breakpoint(large) {
       font-size: 16px;
+
+      &:hover {
+        background-color: initial;
+        color: $color-mainorange;
+      }
     }
 
     font-family: "PT Sans", sans-serif;
@@ -44,23 +49,20 @@
     font-weight: normal;
     font-size: 18px;
     color: $color-text;
+    padding: 9px 5px;
+    transition: 0.2s;
 
     &:hover {
+      background-color: $color-mainorange;
       color: $color-white;
     }
   }
 
   &__item {
-    padding: 9px 5px;
     border-radius: 3px;
 
     &:not(:last-child) {
       margin-bottom: 10px;
-    }
-
-    &:hover {
-      background-color: $color-mainorange;
-      transition: 0.2s;
     }
 
     &--level {
