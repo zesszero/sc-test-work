@@ -3,7 +3,16 @@
 
   @include breakpoint(medium only) {
     @include xy-grid-container($width: 640px);
+
+    padding-bottom: 65px;
   }
+
+  @include breakpoint(large) {
+    padding-bottom: 130px;
+  }
+
+  padding-bottom: 70px;
+
 
   &__row {
     @include breakpoint(large) {

@@ -1,0 +1,123 @@
+.compare {
+  @include xy-grid-container();
+  @include breakpoint(large) {
+    display: block;
+  }
+
+  display: none;
+
+  //&__row {
+  //  @include xy-grid();
+  //  @include xy-gutters($negative: true);
+  //}
+
+  &__title {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: $color-text;
+    padding-bottom: 70px;
+  }
+
+  &__table {
+    display: flex;
+    padding-bottom: 90px;
+  }
+
+  &__table-row {
+    @include xy-grid();
+    @include xy-gutters($negative: true);
+
+    &:last-child {
+      .compare {
+        &__table-description {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__table-head {
+    @include xy-cell(4 of 12);
+
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-middle-gray;
+    border-bottom: 1px solid #E4E4E4;
+
+  }
+
+  &__table-head-text {
+    padding-left: 30px;
+  }
+
+  &__table-head--cloud-version {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    justify-content: center;
+    border-top: 10px solid $color-maingreen;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-text;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  &__table-head--box-version {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    justify-content: center;
+    border-top: 10px solid $color-mainorange;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-text;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  &__table-description {
+    @include xy-cell(4 of 12);
+
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "PT Sans", sans-serif;
+    color: $color-text;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 1px solid #E4E4E4;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  &__table-description--first {
+    justify-content: left;
+    padding-left: 30px;
+    font-size: 16px;
+    box-shadow: none;
+  }
+
+  &__table-description--cloud-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-maingreen;
+    padding-bottom: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+  }
+
+  &__table-description--box-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-mainorange;
+    padding-bottom: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+  }
+}
