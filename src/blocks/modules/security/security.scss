@@ -1,0 +1,105 @@
+.security {
+  @include xy-grid-container();
+
+  @include breakpoint(medium only) {
+    @include xy-grid-container($width: 640px);
+  }
+
+  &__title {
+    @include breakpoint(large) {
+      font-size: 32px;
+      padding-bottom: 5px;
+    }
+
+    @include breakpoint(medium) {
+      padding-bottom: 15px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    color: $color-text;
+    font-size: 20px;
+    padding-bottom: 25px;
+  }
+
+  &__row {
+    @include xy-grid();
+    @include xy-gutters($negative: true);
+
+    align-items: center;
+  }
+
+  &__img {
+    @include breakpoint(large) {
+      @include xy-cell(5);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(4 of 8);
+    }
+
+    @include xy-cell(6 of 6);
+
+    @include breakpoint(small only) {
+      order: 2;
+    }
+  }
+
+  &__advantages {
+    @include breakpoint(large) {
+      @include xy-cell(6);
+      @include xy-cell-offset(1);
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(4 of 8);
+    }
+
+    @include xy-cell(6 of 6);
+
+    @include breakpoint(small only) {
+      order: 1;
+    }
+  }
+
+  &__advantages-list {
+    @include breakpoint(large) {
+      padding-top: 95px;
+    }
+
+    @include breakpoint(medium) {
+      padding-top: 22px;
+    }
+
+    list-style: none;
+  }
+
+  &__advantages-item {
+    @include breakpoint(large) {
+      font-size: 20px;
+      padding-bottom: 45px;
+      line-height: 32px;
+    }
+
+    @include breakpoint(medium) {
+      padding-bottom: 21px;
+    }
+
+    display: flex;
+    font-family: "PT Sans", sans-serif;
+    color: $color-text;
+    font-size: 16px;
+    padding-bottom: 25px;
+    line-height: 24px;
+
+    &:before {
+      content: "";
+      display: block;
+      background: url(../img/red-chek.svg) 0 0 no-repeat;
+      min-width: 16px;
+      height: 11px;
+      margin-right: 30px;
+      margin-top: 10px;
+    }
+  }
+}

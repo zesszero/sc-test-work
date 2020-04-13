@@ -69,6 +69,7 @@
     },
     "dependencies": {
         "foundation-sites": "^6.6.1",
+        "imask": "^6.0.3",
         "jquery": "^3.4.1"
     },
     "husky": {
