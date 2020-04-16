@@ -1,0 +1,366 @@
+.tariffs {
+  @include xy-grid-container();
+
+  @include breakpoint(medium only) {
+    @include xy-grid-container($width: 640px);
+  }
+
+  &__title {
+    @include breakpoint(large) {
+      font-size: 32px;
+      padding-bottom: 55px;
+      padding-top: 125px;
+    }
+
+    @include breakpoint(medium) {
+      padding-bottom: 45px;
+      padding-top: 50px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    color: $color-text;
+    font-size: 20px;
+    padding-bottom: 30px;
+    padding-top: 65px;
+  }
+
+  &__tabs {
+    @include xy-grid();
+    @include xy-gutters($negative: true);
+
+    list-style: none;
+    justify-content: center;
+  }
+
+  &__tabs-item {
+    @include xy-gutters();
+    @include breakpoint(large) {
+      padding-bottom: 0;
+    }
+
+    padding-bottom: 5px;
+
+    &--active {
+      .tariffs {
+        &__tabs-link {
+          color: $color-white;
+          background: $color-orange-gradient;
+          border: 1px solid $color-mainorange;
+        }
+      }
+    }
+  }
+
+
+  &__tabs-link {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-width: 195px;
+    border: 1px solid $color-border-gray;
+    border-radius: 40px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-text;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-white;
+      background: $color-orange-gradient;
+      border: 1px solid $color-mainorange;
+    }
+  }
+
+  &__tabs-content {
+    @include breakpoint(large) {
+    }
+
+    position: relative;
+  }
+
+  &__tabs-panel {
+    @include xy-grid();
+    @include breakpoint(large) {
+      padding-top: 50px;
+    }
+    @include breakpoint(medium) {
+      padding-top: 35px;
+    }
+    padding-top: 25px;
+    display: none;
+
+    &--active {
+      display: flex;
+    }
+  }
+
+
+  &__tab-content {
+    @include breakpoint(large) {
+      @include xy-cell(6);
+
+      margin-bottom: 0;
+    }
+    @include breakpoint(medium) {
+      @include xy-cell(4 of 8);
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 22px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 10px 10px;
+
+    &--optimal {
+      border-top: 8px solid $color-maingreen;
+
+      .tariffs {
+        &__tab-content-list-title {
+          color: $color-maingreen;
+        }
+
+        &__tab-content-item {
+          &:before {
+            content: "";
+            display: inline-block;
+            background: url(../img/chek.svg) 0 0 no-repeat;
+            background-size: contain;
+            margin-right: 20px;
+            width: 12px;
+            height: 9px;
+          }
+        }
+
+        &__btn {
+          background: $color-maingreen;
+
+          &:hover {
+            box-shadow: 0 3px 7px $color-maingreen;
+          }
+        }
+      }
+    }
+
+    &--lite {
+      border-top: 8px solid $color-mainorange;
+
+      .tariffs {
+        &__tab-content-list-title {
+          color: $color-mainorange;
+        }
+
+        &__tab-content-item {
+          &:before {
+            content: "";
+            display: inline-block;
+            background: url(../img/red-chek.svg) 0 0 no-repeat;
+            background-size: contain;
+            margin-right: 20px;
+            width: 12px;
+            height: 9px;
+          }
+        }
+        &__btn {
+          background: $color-mainorange;
+
+          &:hover {
+            box-shadow: 0 3px 7px $color-mainorange;
+          }
+        }
+      }
+    }
+  }
+
+  &__tab-content-head {
+    @include breakpoint(large) {
+      padding-top: 50px;
+      padding-left: 70px;
+    }
+    @include breakpoint(medium) {
+      padding-left: 40px;
+    }
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  &__tab-content-head-title {
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-text;
+    padding-bottom: 15px;
+  }
+
+  &__tab-content-head-text {
+    @include breakpoint(large) {
+      display: block;
+      font-family: "PT Sans", sans-serif;
+      font-size: 16px;
+      color: $color-middle-gray;
+      padding-bottom: 35px;
+    }
+    display: none;
+  }
+
+  &__price {
+    @include breakpoint(large) {
+      padding-bottom: 5px;
+    }
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+  }
+
+  &__new-price {
+    @include breakpoint(large) {
+      font-size: 48px;
+    }
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    padding-right: 15px;
+
+    &--optimal {
+      color: $color-maingreen;
+    }
+
+    &--lite {
+      color: $color-mainorange;
+    }
+  }
+
+  &__old-price {
+    @include breakpoint(large) {
+      font-size: 32px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-size: 24px;
+    color: $color-middle-gray;
+    text-decoration: line-through;
+  }
+
+  &__tab-content-box {
+    border-top: 1px solid $color-border-gray;
+  }
+  &__tab-content-text {
+    @include breakpoint(large) {
+      padding-left: 70px;
+      padding-bottom: 15px;
+      font-size: 20px;
+    }
+    @include breakpoint(medium) {
+      padding-left: 40px;
+    }
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    color: $color-text;
+    padding-top: 20px;
+    padding-bottom: 23px;
+    padding-left: 30px;
+  }
+
+  &__tab-content-list-box {
+    @include breakpoint(large) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid $color-border-gray;
+  }
+
+  &__tab-content-list {
+    @include breakpoint(large) {
+      padding-left: 70px;
+      padding-right: 60px;
+    }
+    @include breakpoint(medium) {
+      padding-left: 40px;
+    }
+
+    list-style: none;
+    padding-left: 30px;
+  }
+
+  &__tab-content-list-title {
+    @include breakpoint(large) {
+      font-size: 20px;
+      padding-left: 70px;
+    }
+    @include breakpoint(medium) {
+      padding-left: 40px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 30px;
+  }
+
+  &__tab-content-item {
+    @include breakpoint(large) {
+      font-size: 20px;
+    }
+
+    display: flex;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    color: $color-text;
+    font-weight: normal;
+    padding-top: 10px;
+
+    &--help {
+      &:after {
+        content: "";
+        display: inline-block;
+        background: url(../img/help.png) 0 0 no-repeat;
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__btn-box {
+    @include breakpoint(large) {
+      padding-left: 70px;
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
+
+    @include breakpoint(medium) {
+      padding-left: 30px;
+      padding-top: 30px;
+    }
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 22px;
+  }
+
+  &__btn {
+    @include breakpoint(large) {
+      padding: 15px 35px;
+    }
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    color: $color-white;
+    padding: 15px 18px;
+    border-radius: 45px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s;
+  }
+}
