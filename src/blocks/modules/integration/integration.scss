@@ -1,0 +1,122 @@
+.integration {
+  @include xy-grid-container();
+
+  @include breakpoint(medium only) {
+    @include xy-grid-container($width: 640px);
+  }
+
+  &__title {
+    @include breakpoint(large) {
+      font-size: 32px;
+      padding-bottom: 90px;
+      padding-top: 130px;
+    }
+
+    @include breakpoint(medium) {
+      padding-bottom: 30px;
+      padding-top: 50px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    color: $color-text;
+    font-size: 20px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+  }
+
+  &__row {
+    @include xy-grid();
+  }
+
+  &__card {
+    @include breakpoint(large) {
+      @include xy-cell(4);
+      padding: 0 20px 0 0;
+      margin-bottom: 50px;
+      border-top: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(4 of 8);
+      padding: 35px 20px 20px 30px;
+    }
+
+    @include xy-cell(6 of 6);
+
+    border-top: 6px solid $color-mainorange;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 10px 10px;
+    padding: 35px 10px 10px 25px;
+    margin-bottom: 25px;
+  }
+
+  &__card-head {
+    @include breakpoint(large) {
+      padding-bottom: 25px;
+    }
+    @include breakpoint(medium) {
+      padding-bottom: 15px;
+    }
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  &__card-icon {
+    @include breakpoint(large) {
+      margin-right: 35px;
+    }
+    margin-right: 25px;
+  }
+
+  &__card-title {
+    @include breakpoint(large) {
+      font-size: 20px;
+    }
+
+    font-family: "PT Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: $color-text;
+  }
+
+  &__card-description {
+    @include breakpoint(large) {
+      padding-bottom: 30px;
+    }
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    color: $color-text;
+    padding-bottom: 22px;
+    margin: 0;
+  }
+
+  &__card-link {
+    display: flex;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-mainorange;
+    text-decoration: none;
+    padding-bottom: 35px;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 5px;
+      background: url(../img/rus-link.svg) 0 0 no-repeat;
+      transform: rotate(-90deg);
+      background-size: contain;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
