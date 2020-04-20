@@ -2,7 +2,7 @@
   @include breakpoint(large) {
     padding-bottom: 165px;
   }
-  padding-bottom: 95px;
+  padding-bottom: 86px;
   &__top-box {
     @include xy-grid-container();
 
@@ -50,6 +50,7 @@
 
     }
     @include xy-grid();
+    @include xy-gutters($negative: true);
 
     justify-content: space-between;
   }
@@ -88,7 +89,8 @@
 
         .start {
           &__content-link {
-            display: flex;
+            visibility: initial;
+            pointer-events: initial;
           }
         }
       }
@@ -139,7 +141,7 @@
 
   &__content-link {
     @include breakpoint(large) {
-      display: none;
+      visibility: hidden;
       justify-content: center;
     }
     @include breakpoint(medium) {
@@ -148,6 +150,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
     font-family: "PT Sans", sans-serif;
     font-weight: bold;
     font-size: 14px;
@@ -162,6 +165,10 @@
       transform: rotate(-90deg);
       background-size: contain;
       margin-left: 5px;
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }

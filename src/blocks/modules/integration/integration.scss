@@ -27,6 +27,7 @@
 
   &__row {
     @include xy-grid();
+    @include xy-gutters($negative: true);
   }
 
   &__card {

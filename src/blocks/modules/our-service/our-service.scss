@@ -81,6 +81,8 @@
 
   &__tabs-panel {
     @include xy-grid();
+    @include xy-gutters($negative: true);
+
     @include breakpoint(large) {
       padding-top: 65px;
     }
