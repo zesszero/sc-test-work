@@ -60,9 +60,9 @@
     }
 
     @include breakpoint(medium) {
-      padding-bottom: 40px;
-
       @include xy-cell(4 of 8);
+
+      padding-bottom: 40px;
     }
 
     @include breakpoint(small only) {

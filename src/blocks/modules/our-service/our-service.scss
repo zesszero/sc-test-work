@@ -39,7 +39,11 @@
       padding-bottom: 0;
     }
 
-    padding-bottom: 5px;
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+
+    margin-bottom: 15px;
 
     &--active {
       .our-service {
