@@ -4,6 +4,20 @@ function FooterMenu() {
     let btnSelector = '.footer__menu-title';
 
     setEventListeners();
+    initToUpBTn();
+
+    function initToUpBTn() {
+        let btn = $('.footer__scroll-btn');
+
+        $(window).scroll(() => {
+            btn.toggleClass('footer__scroll-btn--show', $(window).scrollTop() > 300)
+        });
+
+        btn.on('click', e => {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:0}, '300');
+        })
+    }
 
     function setEventListeners() {
         document.querySelectorAll(btnSelector).forEach(btn => {
@@ -29,5 +43,4 @@ function FooterMenu() {
 
 document.addEventListener('DOMContentLoaded', () => {
     new FooterMenu();
-
 });
