@@ -1,16 +1,17 @@
 import $ from 'jquery/src/jquery';
 import IMask from "imask";
 
-function TestDrive() {
-    let regionBlock = document.querySelector('.test-drive__region');
-    let selectedRegion = document.querySelector('.test-drive__region-selected');
-    let regionList = document.querySelector('.test-drive__region-list');
-    let regionListItems = document.querySelectorAll('.test-drive__region-item');
+function TestDrive(block = document) {
+    let regionBlock = block.querySelector('.test-drive__region');
+    let selectedRegion = block.querySelector('.test-drive__region-selected');
+    let regionList = block.querySelector('.test-drive__region-list');
+    let regionListItems = block.querySelectorAll('.test-drive__region-item');
     let phoneMask;
     let regionsCodesList = {
         RU: '7',
-        EN: '8',
-        KZ: '9',
+        EN: '44',
+        US: '1',
+        CN: '86',
     };
 
     init();
@@ -20,12 +21,16 @@ function TestDrive() {
         setPhoneMask();
     }
 
+    function initBlocks() {
+
+    }
+
     function setEventListeners() {
-        document.querySelectorAll('.test-drive__form-input').forEach(formInput => {
+        block.querySelectorAll('.test-drive__form-input').forEach(formInput => {
             formInput.addEventListener('keyup', () => {
                 let value = formInput.value;
 
-                formInput.classList.toggle('test-drive__form-field--filled', value.length !== 0)
+                formInput.classList.toggle('test-drive__form-input--filled', value.length !== 0)
             });
         });
 
@@ -42,7 +47,7 @@ function TestDrive() {
     }
 
     function setPhoneMask() {
-        let phoneInput = document.querySelector('.test-drive__form-input[name="phone"]');
+        let phoneInput = block.querySelector('.test-drive__form-input[name="phone"]');
 
         phoneMask = IMask(phoneInput, {
             mask: '+{7} (000) 000-00-00',
@@ -74,5 +79,7 @@ function TestDrive() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new TestDrive();
+    document.querySelectorAll('.test-drive').forEach(testDrive => {
+        new TestDrive(testDrive);
+    });
 });

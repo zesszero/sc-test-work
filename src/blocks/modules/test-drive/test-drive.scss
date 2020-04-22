@@ -53,6 +53,14 @@
 
     position: relative;
     margin-bottom: 10px;
+
+    &--phone {
+      .test-drive {
+        &__form-input {
+          padding-left: 70px;
+        }
+      }
+    }
   }
 
   &__form-placeholder {
@@ -77,7 +85,7 @@
     @include breakpoint(large) {
       padding-top: 20px;
       padding-bottom: 20px;
-      padding-left: 70px;
+      padding-left: 30px;
     }
 
     padding-top: 10px;
